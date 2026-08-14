@@ -1,0 +1,31 @@
+# Install this bundle after a Harness surface bundle that provides ctx.apiProxy.
+# The official @deepseek-ai/dsh-web-app bundle is the recommended composition.
+- insert:
+    - id: slashx-gateway
+      name: dsh-plugin-slashx-gateway
+      config:
+        host: !!js process.env.SLASHX_GATEWAY_HOST ?? '127.0.0.1'
+        port: !!js Number(process.env.SLASHX_GATEWAY_PORT ?? 3090)
+        token: !!js process.env.SLASHX_GATEWAY_TOKEN
+        publicBaseUrl: !!js process.env.SLASHX_GATEWAY_PUBLIC_BASE_URL
+        stateRoot: !!js process.env.SLASHX_GATEWAY_STATE_ROOT
+        agentPreset: !!js process.env.SLASHX_GATEWAY_AGENT_PRESET
+        requestTimeoutMs: !!js Number(process.env.SLASHX_GATEWAY_REQUEST_TIMEOUT_MS ?? 300000)
+        maxRequestBytes: !!js Number(process.env.SLASHX_GATEWAY_MAX_REQUEST_BYTES ?? 16777216)
+        maxMediaBytes: !!js Number(process.env.SLASHX_GATEWAY_MAX_MEDIA_BYTES ?? 26214400)
+        maxTotalMediaBytes: !!js Number(process.env.SLASHX_GATEWAY_MAX_TOTAL_MEDIA_BYTES ?? 52428800)
+        maxConversationBytes: !!js Number(process.env.SLASHX_GATEWAY_MAX_CONVERSATION_BYTES ?? 1073741824)
+        maxPrincipalBytes: !!js Number(process.env.SLASHX_GATEWAY_MAX_PRINCIPAL_BYTES ?? 5368709120)
+        maxWorkspaceBytes: !!js Number(process.env.SLASHX_GATEWAY_MAX_WORKSPACE_BYTES ?? 21474836480)
+        maxArtifactStoreBytes: !!js Number(process.env.SLASHX_GATEWAY_MAX_ARTIFACT_STORE_BYTES ?? 2147483648)
+        maxStoredArtifacts: !!js Number(process.env.SLASHX_GATEWAY_MAX_STORED_ARTIFACTS ?? 10000)
+        maxArtifactBytesPerRun: !!js Number(process.env.SLASHX_GATEWAY_MAX_ARTIFACT_BYTES_PER_RUN ?? 104857600)
+        maxArtifactsPerRun: !!js Number(process.env.SLASHX_GATEWAY_MAX_ARTIFACTS_PER_RUN ?? 20)
+        assetTtlSeconds: !!js Number(process.env.SLASHX_GATEWAY_ASSET_TTL_SECONDS ?? 86400)
+        maxConcurrentRuns: !!js Number(process.env.SLASHX_GATEWAY_MAX_CONCURRENT_RUNS ?? 4)
+        maxQueuedRuns: !!js Number(process.env.SLASHX_GATEWAY_MAX_QUEUED_RUNS ?? 100)
+        maxRunLedgerEntries: !!js Number(process.env.SLASHX_GATEWAY_MAX_RUN_LEDGER_ENTRIES ?? 100000)
+        maxRunLedgerEntriesPerPrincipal: !!js Number(process.env.SLASHX_GATEWAY_MAX_RUN_LEDGER_ENTRIES_PER_PRINCIPAL ?? 10000)
+        runRetentionSeconds: !!js Number(process.env.SLASHX_GATEWAY_RUN_RETENTION_SECONDS ?? 2592000)
+        allowHttpMedia: !!js process.env.SLASHX_GATEWAY_ALLOW_HTTP_MEDIA === '1'
+        privateMediaHosts: !!js (process.env.SLASHX_GATEWAY_PRIVATE_MEDIA_HOSTS ?? '').split(',').map(v => v.trim()).filter(Boolean)
