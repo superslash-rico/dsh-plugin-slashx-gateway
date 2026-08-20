@@ -1,7 +1,7 @@
 # DeepSeek Harness × SlashX Gateway
 
 `dsh-plugin-slashx-gateway` 是一个 DeepSeek Harness Host Bundle。它把 Harness
-实例暴露为遵循 `slashx.request.v1` / `slashx.response.v1` 的 SlashX 服务端点，
+实例暴露为遵循[www.slashx.cn](https://www.slashx.cn) `slashx.request.v1` / `slashx.response.v1` 的 SlashX 服务端点，
 并提供文本、图片、文件、音视频、引用、卡片和按钮所需的安全媒体入口与制品出口。
 
 当前版本：`0.1.0`。兼容目标：DeepSeek Harness `>=0.1.0-rc.6 <0.2.0`。
