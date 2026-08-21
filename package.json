@@ -25,6 +25,7 @@
     "LICENSE"
   ],
   "scripts": {
+    "lint": "eslint --config ../../eslint.packages.config.mjs .",
     "test": "node --test tests/*.test.js",
     "check": "node --check index.js && node --check lib/*.js",
     "prepack": "npm run check && npm test"
