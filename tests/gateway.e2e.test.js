@@ -132,6 +132,7 @@ function fakeHarness({ includeUsage = true } = {}) {
         await new Promise(resolve => signal.addEventListener('abort', resolve, { once: true }))
       },
       async *host(envelope, signal) {
+        yield* []
         await new Promise(resolve => signal.addEventListener('abort', resolve, { once: true }))
       },
     },
